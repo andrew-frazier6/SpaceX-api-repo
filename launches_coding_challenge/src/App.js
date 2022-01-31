@@ -10,9 +10,13 @@ import './App.css';
 function App() {
   const [data, setData] = useState([]);
   const pieData = [{
-    "success": 147
+    result: "Success",
+    success: 147,
+    color: "#25744c"
   }, {
-    "failure": 5
+    result: "Failure",
+    failure: 5,
+    color: "#a91114"
   }];
 
   const getData = () => {
@@ -44,7 +48,17 @@ function App() {
             pieValue={pieData.length}
             outerRadius={half}
             innerRadius={half - 8}
-            padAngle={0.1}>
+            padAngle={0.003}>
+            {(pie) => {
+              return pie.arcs.map((arc) => {
+                console.log(arc)
+                return (
+                  <g key={arc.data.result}>
+                    <path d={pie.path(arc)} fill={arc.data.color}></path>
+                  </g>
+                )
+              })
+            }}
           </Pie>
         </Group>
       </svg>
