@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Pie } from '@visx/shape';
 import { Group } from '@visx/group';
-import { Text } from '@visx/text';
+// import { Text } from '@visx/text';
 import Axios from "axios";
-
 import './App.css';
-
 
 function App() {
   const [data, setData] = useState([]);
-  const pieData = [{
-    result: "Success",
-    success: 147,
-    color: "#25744c"
-  }, {
-    result: "Failure",
-    failure: 5,
-    color: "#a91114"
-  }];
+  const [modeledData, setModeledData] = useState([])
 
   const getData = () => {
     Axios.get(
@@ -25,13 +15,24 @@ function App() {
     )
       .then((res) => {
         setData(res.data);
+        setModeledData(
+          [{
+            result: "Success",
+            total: res?.data?.filter(data => data.success).length,
+            color: "#25744c"
+          },
+          {
+            result: "Failure",
+            total: res?.data?.filter(data => !data.success).length,
+            color: "#a91114"
+          }]
+        )
       })
-      .catch((err) => console.log("there was an error", err));
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getData();
-    console.log(data)
   }, []);
 
   const width = 300;
@@ -43,15 +44,17 @@ function App() {
       <svg className='pie-chart' >
         <Group top={half} left={half}>
           <Pie
-            data={pieData}
-            // pieValue={(data) => (data.failure / data.success) * 100}
-            pieValue={pieData.length}
+            data={modeledData}
+            pieValue={((data) => {
+              const failures = data?.result === 'Failure' ? data.total : 0;
+              const success = data?.result === 'Success' ? data.total : 0;
+              return success + failures;
+            })}
             outerRadius={half}
             innerRadius={half - 8}
-            padAngle={0.003}>
+            padAngle={0.007}>
             {(pie) => {
               return pie.arcs.map((arc) => {
-                console.log(arc)
                 return (
                   <g key={arc.data.result}>
                     <path d={pie.path(arc)} fill={arc.data.color}></path>
@@ -64,7 +67,7 @@ function App() {
       </svg>
       <div style={{ height: '100vh', width: '100vw' }}>{data.map((data, index) => {
         return (
-          <li key={index}>{data.failures.length}</li>
+          <li key={index}>{data.name}</li>
         );
       })}</div>
     </div>
