@@ -86,7 +86,33 @@ function App() {
                       })
                     }}
                   </Pie>
-                  <Text textAnchor='middle' >HELLO</Text>
+
+                  {active ? (
+                    <>
+                      <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
+                        {modeledData.total}
+                      </Text>
+
+                      <Text
+                        textAnchor="middle"
+                        fill={active.color}
+                        fontSize={20}
+                        dy={20}
+                      >
+                        {`${active.total} ${active.result}`}
+                      </Text>
+                    </>
+                  ) : (
+                    <>
+                      <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
+                        {`${Math.floor(modeledData[0].total / 152 * 100)}%`}
+                      </Text>
+
+                      <Text textAnchor="middle" fill="#aaa" fontSize={20} dy={20}>
+                        {`${data.length} total launches`}
+                      </Text>
+                    </>
+                  )}
                 </Group>
               </svg>
             </div>
