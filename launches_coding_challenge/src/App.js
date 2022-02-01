@@ -86,20 +86,20 @@ function App() {
                       })
                     }}
                   </Pie>
-
                   {active ? (
+
                     <>
                       <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
-                        {modeledData.total}
+                        {active === 'Success' ? modeledData[0].total : modeledData[1].total}
                       </Text>
 
                       <Text
                         textAnchor="middle"
-                        fill={active.color}
-                        fontSize={20}
+                        fill="#fff"
+                        fontSize={30}
                         dy={20}
                       >
-                        {`${active.total} ${active.result}`}
+                        {active}
                       </Text>
                     </>
                   ) : (
@@ -119,7 +119,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
