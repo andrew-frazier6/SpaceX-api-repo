@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   const [data, setData] = useState([]);
   const [modeledData, setModeledData] = useState([])
+  const [active, setActive] = useState(null);
 
   const getData = () => {
     Axios.get(
@@ -51,12 +52,17 @@ function App() {
               return success + failures;
             })}
             outerRadius={half}
-            innerRadius={half - 8}
+            innerRadius={({ data }) => {
+              console.log(active)
+              const size = active === data.result ? 14 : 8;
+              return half - size;
+            }}
             padAngle={0.007}>
             {(pie) => {
               return pie.arcs.map((arc) => {
                 return (
-                  <g key={arc.data.result}>
+                  <g key={arc.data.result} style={{ cursor: 'pointer' }} onMouseEnter={() => setActive(arc.data.result)}
+                    onMouseLeave={() => setActive(null)}>
                     <path d={pie.path(arc)} fill={arc.data.color}></path>
                   </g>
                 )
