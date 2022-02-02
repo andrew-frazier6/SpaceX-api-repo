@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import './styles.css'
 import { Pie } from '@visx/shape';
 import { Group } from '@visx/group';
 import { Text } from '@visx/text';
 
-export default function PieChart({ data, modeledData, active, setActive }) {
 
+export const PieChart = ({ chartData, active, setActive }) => {
     const width = 600;
     const half = width / 2;
 
+    console.log(active)
+
+    const modeledData = useMemo(() => {
+        return ([{
+            result: "Success",
+            total: chartData?.filter(data => data.success).length,
+            color: "#25744c"
+        },
+        {
+            result: "Failure",
+            total: chartData?.filter(data => !data.success).length,
+            color: "#a91114"
+        }])
+    }, [chartData])
+
     return (
-        <div className='pie-cahrt-container'>
-            <svg width={width} height={width} >
+        <>
+            <svg width={width} height={width}>
                 <Group top={half} left={half}>
                     <Pie
                         data={modeledData}
@@ -24,7 +40,8 @@ export default function PieChart({ data, modeledData, active, setActive }) {
                             const size = active === data.result ? 20 : 12;
 
                             return half - size;
-                        }} padAngle={0.01}>
+                        }}
+                        padAngle={0.01}>
                         {(pie) => {
                             return pie.arcs.map((arc) => {
                                 return (
@@ -39,8 +56,8 @@ export default function PieChart({ data, modeledData, active, setActive }) {
                     {active ? (
 
                         <>
-                            <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
-                                {/* {active === 'Success' ? modeledData[0].total : modeledData[1].total} */}
+                            <Text textAnchor="middle" fill="black" fontSize={40} dy={-20}>
+                                {active === 'Success' ? modeledData[0].total : modeledData[1].total}
                             </Text>
 
                             <Text
@@ -54,17 +71,17 @@ export default function PieChart({ data, modeledData, active, setActive }) {
                         </>
                     ) : (
                         <>
-                            <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
-                                {/* {`${Math.floor(modeledData[0].total / 152 * 100)}%`} */}
+                            <Text textAnchor="middle" fill="black" fontSize={40} dy={-20}>
+                                {`${Math.floor(modeledData[0].total / 152 * 100)}%`}
                             </Text>
 
                             <Text textAnchor="middle" fill="#aaa" fontSize={20} dy={20}>
-                                {/* {`${data.length} total launches`} */}
+                                {`${chartData.length} total launches`}
                             </Text>
                         </>
                     )}
                 </Group>
-            </svg >
-        </div >
+            </svg>
+        </>
     )
 }

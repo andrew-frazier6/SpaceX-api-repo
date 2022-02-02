@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css';
 
-export default function LaunchList({ data }) {
+export const LaunchList = ({ data }) => {
 
 
     return (

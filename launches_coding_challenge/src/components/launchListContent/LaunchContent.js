@@ -1,7 +1,7 @@
 import React from 'react'
-import LaunchList from './launchList/LaunchList';
+import { LaunchList } from './LaunchList/LaunchList';
 
-export default function LaunchContent({ data }) {
+export const LaunchContent = ({ data }) => {
 
     let today = new Date();
 
