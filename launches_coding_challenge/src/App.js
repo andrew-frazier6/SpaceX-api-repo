@@ -45,9 +45,12 @@ function App() {
       <div className='section-3'>
         <div className='sky-section-3'>
           <div className='stars'>
+            <div className='test-container'>
+              <Earth className='earth' />
+              {/* <Footer /> */}
+            </div>
             {/* <RocketContent rocketData={data}/> */}
-            <Earth />
-            <Footer />
+
           </div>
         </div>
       </div>
