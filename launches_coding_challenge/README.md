@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Simple React App
 
 Project was made with React and uses the SpaceX open source API
 
