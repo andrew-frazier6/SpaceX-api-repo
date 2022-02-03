@@ -8,15 +8,6 @@ body {
   box-sizing: border-box;
 }
 
-.section-1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 120vh;
-  width: 100vw;
-  margin: 0;
-}
-
 @keyframes bounce {
 	0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -40,6 +31,74 @@ body {
   -webkit-animation-iteration-count:2;
   animation-iteration-count:infinite;
 } 
+
+
+.earth-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.earth-rocket {
+  height: 5%;
+  width: 5%;
+  color: white;
+  transform: translate(-300px,300px);
+
+}
+
+.footHolder {
+  height: 6%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+}
+
+.data-list-main-container {
+  height: 80%;
+  width: 100%;
+  margin-top: 8%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.action-container {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details-flexBox-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+ /* SECTION CONTAINERS */
+
+.section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  width: 100vw;
+  margin: 0;
+}
 
 .section-2 {
   display: flex;
@@ -68,24 +127,7 @@ body {
   margin: 0;
 }
 
-.earth-container {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  display: flex;
-  align-items: flex-end;
-}
-
-.footHolder {
-  height: 6%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.315);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  position: absolute;
-}
+/* BACKGROUND */
 
 .sky-section-1 {
   position:absolute;
@@ -117,72 +159,6 @@ body {
   height: 110vh;
 }
 
-.data-list-main-container {
-  height: 80%;
-  width: 100%;
-  margin-top: 8%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-.searchButton {
-  width: 10%;
-  height: 10%;
-  cursor: pointer;
-  color: white;
-  padding: 0.4%;
-  margin: 2%;
-  border-radius: 10px;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  transition: ease-in-out 0.5s;
-}
-
-.details-bubbles {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  width: 25%; 
-  padding: 1%;
-  height: 90px;
-  border-radius: 10px;
-  background-color: rgba(211, 211, 211, 0.507);
-  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
-  transition: ease-in-out 0.8s;
-  overflow: scroll;
-}
-
-.searchButton:hover {
-  color: green;
-  height: 12%;
-  transform: translate(0,-5px);
-  transition: ease-in-out 0.5s;
-}
-
-.details-headers {
-  color: rgb(247, 247, 247);
-}
-
-.action-container {
-  height: 100%;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.details-flexBox-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-}
-
 .sky-section-4 {
   position:absolute;
   width:100vw;
@@ -205,3 +181,5 @@ body {
   background:url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   z-index:0;
 }
+
+/* END BACKGROUND */

@@ -4,7 +4,6 @@ import { Pie } from '@visx/shape';
 import { Group } from '@visx/group';
 import { Text } from '@visx/text';
 
-
 export const PieChart = ({ chartData, active, setActive }) => {
     const width = 600;
     const half = width / 2;
@@ -37,13 +36,11 @@ export const PieChart = ({ chartData, active, setActive }) => {
                             const failures = data?.result === 'Failure' ? data.total : 0;
                             const success = data?.result === 'Success' ? data.total : 0;
                             const planned = data?.result === 'Planned' ? data.total : 0;
-
                             return success + failures + planned;
                         })}
                         outerRadius={half}
                         innerRadius={({ data }) => {
                             const size = active === data.result ? 20 : 12;
-
                             return half - size;
                         }}
                         padAngle={0.01}>
@@ -59,12 +56,11 @@ export const PieChart = ({ chartData, active, setActive }) => {
                         }}
                     </Pie>
                     {active ? (
-
+                        // IF ACTIVE SHOW TOTAL OF ARC CHOSEN
                         <>
                             <Text textAnchor="middle" fill="white" fontSize={40} dy={-20}>
                                 {active === 'Success' ? modeledData[0].total : modeledData[1].total}
                             </Text>
-
                             <Text
                                 textAnchor="middle"
                                 fill="#aaa"
@@ -75,11 +71,11 @@ export const PieChart = ({ chartData, active, setActive }) => {
                             </Text>
                         </>
                     ) : (
+                        // INACTIVE SHOW OVERALL %
                         <>
                             <Text textAnchor="middle" fill="white" fontSize={40} dy={-20}>
                                 {`${Math.floor(modeledData[0].total / 152 * 100)}% success`}
                             </Text>
-
                             <Text textAnchor="middle" fill="#aaa" fontSize={20} dy={20}>
                                 {`${chartData.length} total launches`}
                             </Text>

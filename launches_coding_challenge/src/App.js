@@ -2,18 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Axios from "axios";
 import './App.css';
 import { Footer } from './components/Footer/Footer';
+import { FaRocket } from "react-icons/fa";
 import { Earth } from './components/Earth/Earth'
 import { LaunchContent } from './components/LaunchListContent/LaunchContent';
 import { PieChart } from './components/PieChart/PieChart'
 import { FaChevronCircleDown } from "react-icons/fa";
+import { Rocket } from './components/Rocket/Rocket'
 
 
 function App() {
   const [data, setData] = useState([]);
   const [active, setActive] = useState(null);
-  const [randomNumber, setRandomNumber] = useState(0);
-  const [randomShip, setRandomShip] = useState([]);
-
 
   const getData = () => {
     Axios.get(`${process.env.REACT_APP_BASE_API_URL}/launches`)
@@ -22,13 +21,6 @@ function App() {
   };
 
   useEffect(() => getData(), []);
-
-  console.log(data)
-
-  const getShip = () => {
-    setRandomNumber(Math.floor(Math.random() * (151)));
-    setRandomShip(data[`${randomNumber}`]);
-  };
 
   return (
     <div className="App">
@@ -39,7 +31,6 @@ function App() {
             <div className='bounce'>
               <FaChevronCircleDown />
             </div>
-
           </div>
         </div>
       </div>
@@ -62,18 +53,7 @@ function App() {
                 <FaChevronCircleDown />
               </div>
               <div className='data-list-main-container'>
-                {randomShip.length === 0 ? '' : <img style={{ maxHeight: '320px' }} alt='please' src={randomShip.links.patch.small}></img>}
-                <div className='searchButton' onClick={() => {
-                  getShip()
-                }}> Search Random Ship</div>
-                {randomShip.length < 1 ? '' : <>
-                  <h1 style={{ color: 'orange' }}>{randomShip.name}</h1>
-                  <div className='details-flexBox-container'>
-                    <div className='details-bubbles'><h3 className='details-headers'>Flight #</h3>{randomShip.flight_number}</div>
-                    <div className='details-bubbles'><h3 className='details-headers'>ID</h3>{randomShip.id}</div>
-                    <div className='details-bubbles'><h3 className='details-headers'>Details</h3>{randomShip.details === null ? 'Upcoming Flight' : randomShip.details}</div>
-                  </div>
-                </>}
+                <Rocket data={data} />
               </div>
             </div>
           </div>
@@ -83,6 +63,12 @@ function App() {
         <div className='sky-section-4'>
           <div className='stars'>
             <div className='earth-container'>
+              <div className='earth-rocket'>
+                <FaRocket style={{
+                  height: '100%',
+                  width: '100%'
+                }} className='bounce' />
+              </div>
               <Earth />
               <div className='footHolder'>
                 <Footer />
@@ -91,8 +77,6 @@ function App() {
           </div>
         </div>
       </div>
-
-
     </div >
   );
 }

@@ -3,7 +3,6 @@ import './styles.css';
 
 export const LaunchList = ({ data }) => {
 
-
     return (
         <div>
             <ul className='launches-list'>{data.map((data, index) => {
