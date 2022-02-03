@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from "axios";
 import './App.css';
-// import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Earth } from './components/Earth/Earth'
 import { LaunchContent } from './components/LaunchListContent/LaunchContent';
@@ -27,9 +26,7 @@ function App() {
   console.log(data)
 
   const getShip = () => {
-
     setRandomNumber(Math.floor(Math.random() * (151)));
-    // console.log(data[`${randomNumber}`].name);
     setRandomShip(data[`${randomNumber}`]);
   };
 
@@ -54,22 +51,27 @@ function App() {
               setData={setData}
               active={active}
               setActive={setActive} />
-            <div className='bounce'>
-              <FaChevronCircleDown />
-            </div>
           </div>
         </div>
       </div>
       <div className='section-3'>
         <div className='sky-section-3'>
           <div className='stars'>
-            <div className='rockets-outer-div'>
-              <button onClick={() => {
-                getShip()
-              }}> Search Random Ship</button>
-              {randomShip ? <img alt='please' src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png"></img> : 'not working'}
-              <div>{randomShip.name}</div>
-
+            <div className='action-container'>
+              <div className='bounce'>
+                <FaChevronCircleDown />
+              </div>
+              <div className='data-list-main-container'>
+                {randomShip.length === 0 ? '' : <img alt='please' src={randomShip.links.patch.small}></img>}
+                <button className='searchButton' onClick={() => {
+                  getShip()
+                }}> Search Random Ship</button>
+                <h1>{randomShip.name}</h1>
+                <div>{randomShip.id}</div>
+                <div>{randomShip.flight_number}</div>
+                <div>{randomShip.details}</div>
+                <div>{randomShip.success}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,8 +85,6 @@ function App() {
                 <Footer />
               </div>
             </div>
-            {/* <RocketContent rocketData={data}/> */}
-
           </div>
         </div>
       </div>
