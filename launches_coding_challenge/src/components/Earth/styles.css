@@ -9,6 +9,6 @@
 .earth { 
     height: 100%;
     width: 100%;
-    background: linear-gradient(0deg, rgba(84,121,8,1) 91%, rgba(144,140,65,1) 66%, rgba(34,120,195,1) 75%, rgba(45,93,253,1) 75%, rgba(252,252,252,1) 15%);
-    clip-path: circle(60% at 50% 150%);
+    background: linear-gradient(0deg, rgba(84,121,8,1) 0%, rgba(144,140,65,1) 10%, rgba(34,120,195,1) 18%, rgba(45,93,253,1) 28%, rgba(252,252,252,1) 91%);
+    clip-path: circle(55% at 50% 150%);
 }   
