@@ -4,8 +4,8 @@ Project was made with React and uses the SpaceX open source API
 
 ## To Start
 
-Run "npm start" to get it running 
+Run *npm start* to get it running 
 
-### Thoughts
+### What it does
 
-I had fun with this API and with more time...theres SO MUCH info to use its fascinating
+Displays data and shows just a snippet of a AWESOME information
