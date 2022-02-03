@@ -21,25 +21,37 @@ function App() {
 
   return (
     <div className="App">
-      <div className='page-container'>
+      <div className='page-1'>
         <div className='sky'>
           <div className='stars'>
-
             <Header />
-
             <LaunchContent data={data} />
+          </div>
+        </div>
+      </div>
+      <div className='page-2'>
+        <div className='sky'>
+          <div className='stars'>
+            <PieChart
+              chartData={data}
+              setData={setData}
+              active={active}
+              setActive={setActive} />
+          </div>
+        </div>
+      </div>
+      <div className='page-3'>
+        <div className='sky'>
+          <div className='stars'>
+            {/* <RocketContent rocketData={data}/> */}
+
+            <Footer />
 
           </div>
         </div>
       </div>
 
-      <PieChart
-        chartData={data}
-        setData={setData}
-        active={active}
-        setActive={setActive} />
 
-      <Footer />
     </div >
   );
 }

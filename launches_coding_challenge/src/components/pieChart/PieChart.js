@@ -9,14 +9,13 @@ export const PieChart = ({ chartData, active, setActive }) => {
     const width = 600;
     const half = width / 2;
 
-    console.log(active)
-
     const modeledData = useMemo(() => {
         return ([{
             result: "Success",
             total: chartData?.filter(data => data.success).length,
             color: "#25744c"
         },
+
         {
             result: "Failure",
             total: chartData?.filter(data => !data.success).length,
@@ -25,7 +24,7 @@ export const PieChart = ({ chartData, active, setActive }) => {
     }, [chartData])
 
     return (
-        <>
+        <div className='pie-chart-container'>
             <svg width={width} height={width}>
                 <Group top={half} left={half}>
                     <Pie
@@ -56,13 +55,13 @@ export const PieChart = ({ chartData, active, setActive }) => {
                     {active ? (
 
                         <>
-                            <Text textAnchor="middle" fill="black" fontSize={40} dy={-20}>
+                            <Text textAnchor="middle" fill="white" fontSize={40} dy={-20}>
                                 {active === 'Success' ? modeledData[0].total : modeledData[1].total}
                             </Text>
 
                             <Text
                                 textAnchor="middle"
-                                fill="#fff"
+                                fill="#aaa"
                                 fontSize={30}
                                 dy={20}
                             >
@@ -71,7 +70,7 @@ export const PieChart = ({ chartData, active, setActive }) => {
                         </>
                     ) : (
                         <>
-                            <Text textAnchor="middle" fill="black" fontSize={40} dy={-20}>
+                            <Text textAnchor="middle" fill="white" fontSize={40} dy={-20}>
                                 {`${Math.floor(modeledData[0].total / 152 * 100)}%`}
                             </Text>
 
@@ -82,6 +81,6 @@ export const PieChart = ({ chartData, active, setActive }) => {
                     )}
                 </Group>
             </svg>
-        </>
+        </div>
     )
 }
