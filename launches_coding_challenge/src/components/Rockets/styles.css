@@ -1,0 +1,20 @@
+/* .rockets-container{
+    height: 100%;
+    width: 100%;
+} */
+
+.rocket-div {
+    /* margin: 10% auto; */
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
+
+#rocket {
+    height: 160px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}

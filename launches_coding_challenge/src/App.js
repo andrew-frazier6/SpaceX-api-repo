@@ -6,6 +6,7 @@ import { Footer } from './components/Footer/Footer';
 import { Earth } from './components/Earth/Earth'
 import { LaunchContent } from './components/LaunchListContent/LaunchContent';
 import { PieChart } from './components/PieChart/PieChart'
+import { Rockets } from './components/Rockets/Rockets'
 
 
 function App() {
@@ -44,6 +45,15 @@ function App() {
       </div>
       <div className='section-3'>
         <div className='sky-section-3'>
+          <div className='stars'>
+            <div className='rockets-outer-div'>
+              <Rockets data={data} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='section-4'>
+        <div className='sky-section-4'>
           <div className='stars'>
             <div className='earth-container'>
               <Earth />
