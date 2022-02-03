@@ -58,19 +58,22 @@ function App() {
         <div className='sky-section-3'>
           <div className='stars'>
             <div className='action-container'>
-              <div className='bounce'>
+              <div className='bounce' >
                 <FaChevronCircleDown />
               </div>
               <div className='data-list-main-container'>
-                {randomShip.length === 0 ? '' : <img alt='please' src={randomShip.links.patch.small}></img>}
-                <button className='searchButton' onClick={() => {
+                {randomShip.length === 0 ? '' : <img style={{ maxHeight: '320px' }} alt='please' src={randomShip.links.patch.small}></img>}
+                <div className='searchButton' onClick={() => {
                   getShip()
-                }}> Search Random Ship</button>
-                <h1>{randomShip.name}</h1>
-                <div>{randomShip.id}</div>
-                <div>{randomShip.flight_number}</div>
-                <div>{randomShip.details}</div>
-                <div>{randomShip.success}</div>
+                }}> Search Random Ship</div>
+                {randomShip.length < 1 ? '' : <>
+                  <h1 style={{ color: 'orange' }}>{randomShip.name}</h1>
+                  <div className='details-flexBox-container'>
+                    <div className='details-bubbles'><h3 className='details-headers'>Flight #</h3>{randomShip.flight_number}</div>
+                    <div className='details-bubbles'><h3 className='details-headers'>ID</h3>{randomShip.id}</div>
+                    <div className='details-bubbles'><h3 className='details-headers'>Details</h3>{randomShip.details === null ? 'Upcoming Flight' : randomShip.details}</div>
+                  </div>
+                </>}
               </div>
             </div>
           </div>

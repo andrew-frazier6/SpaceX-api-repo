@@ -17,7 +17,6 @@ body {
   margin: 0;
 }
 
-/*bounce*/
 @keyframes bounce {
 	0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -55,7 +54,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   margin: 0;
 }
@@ -88,13 +87,12 @@ body {
   position: absolute;
 }
 
-/* STAR BACKGROUND */
 .sky-section-1 {
   position:absolute;
   width:100vw;
-  background: #4B79A1;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #0A2342, #071b33);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #020913, #020913); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to top, #0A2342, #071b33);
+  background: linear-gradient(to top, #020913, #020913);
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
   height: 120vh;
 }
@@ -102,9 +100,9 @@ body {
 .sky-section-2 {
   position:absolute;
   width:100vw;
-  background: #4B79A1;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #0A2342, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #0A2342, #020913); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to top, #0A2342, #0A2342); 
+  background: linear-gradient(to top, #0A2342, #020913); 
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
   height: 100vh;
 }
@@ -112,45 +110,85 @@ body {
 .sky-section-3 {
   position:absolute;
   width:100vw;
-  background: #4B79A1;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #0A2342, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #0A2342, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to top, #0A2342, #0A2342); 
+  background: linear-gradient(to top, #0A2342, #0A2342); 
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
-  height: 100vh;
+  height: 110vh;
 }
 
 .data-list-main-container {
-  margin-top: 5%;
+  height: 80%;
+  width: 100%;
+  margin-top: 8%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
 .searchButton {
+  width: 10%;
+  height: 10%;
   cursor: pointer;
-  margin-top: 5%;
+  color: white;
+  padding: 0.4%;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: ease-in-out 0.5s;
+}
+
+.details-bubbles {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 25%; 
+  padding: 1%;
+  height: 90px;
+  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.507);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+  transition: ease-in-out 0.8s;
+  overflow: scroll;
 }
 
 .searchButton:hover {
-  transform: translate(0,2%);
+  color: green;
+  height: 12%;
+  transform: translate(0,-5px);
+  transition: ease-in-out 0.5s;
+}
+
+.details-headers {
+  color: rgb(247, 247, 247);
 }
 
 .action-container {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.details-flexBox-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
 .sky-section-4 {
   position:absolute;
   width:100vw;
-  background: #4B79A1;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #264870, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #355274, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to top, #264870, #0A2342); 
+  background: linear-gradient(to top, #355274, #0A2342);
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
   height: 100vh;
 }
@@ -167,5 +205,3 @@ body {
   background:url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   z-index:0;
 }
-
-/* END STAR BACKGROUND */
