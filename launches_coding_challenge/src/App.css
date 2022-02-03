@@ -4,6 +4,7 @@ body {
 
 .App {
   text-align: center;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -11,10 +12,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   margin: 0;
 }
+
+/*bounce*/
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+	40% {
+   transform: translateY(-30px);
+  }
+	60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  color: white;
+  font-size: 40px;
+  opacity: 0.7;
+ -webkit-animation-name:bounce;
+ animation-name:bounce;
+ -webkit-animation-duration: 2s;
+ animation-duration: 2s;
+  -webkit-animation-iteration-count:2;
+  animation-iteration-count:infinite;
+} 
 
 .section-2 {
   display: flex;
@@ -74,7 +100,7 @@ body {
   background: -webkit-linear-gradient(to top, #0A2342, #071b33);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #020913, #020913); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
-  height: 100vh;
+  height: 120vh;
 }
 
 .sky-section-2 {

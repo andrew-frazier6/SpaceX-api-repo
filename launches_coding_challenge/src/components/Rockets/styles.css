@@ -12,6 +12,10 @@
     width: 600px;
 }
 
+.rocket-inner-div {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png");
+}
+
 #rocket {
     height: 160px;
     display: block;
