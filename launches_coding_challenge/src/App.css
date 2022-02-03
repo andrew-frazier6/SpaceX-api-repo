@@ -35,13 +35,31 @@ body {
   margin: 0;
 }
 
-.test-container {
+.earth-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footHolder {
+  height: 6%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+}
+
+/* .test-container {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   /* display: flex;
   justify-content: center; */
-}
+
 
 /* STAR BACKGROUND */
 .sky-section-1 {

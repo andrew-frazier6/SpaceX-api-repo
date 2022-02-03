@@ -1,0 +1,27 @@
+.footer-list {
+    margin: 0;
+    height: 100%;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.footer-list-item {
+    height: auto;
+    width: auto;
+    color: white;
+    text-decoration: none;
+}
+
+.hyperLink {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hyperLink:hover {
+    color: lightseagreen;
+    font-size: 1.1rem;
+}
