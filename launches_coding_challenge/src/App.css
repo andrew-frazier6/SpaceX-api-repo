@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
 }
 
-.page-1 {
+.section-1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@ body {
   margin: 0;
 }
 
-.page-2 {
+.section-2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,39 +26,59 @@ body {
   margin: 0;
 }
 
-.page-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.section-3 {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   height: 100vh;
   width: 100vw;
   margin: 0;
 }
 
-.page-container2 {
+/* .page-container2 {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-}
+} */
 
-.pie-chart-container {
+/* .pie-chart-container {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* STAR BACKGROUND */
-.sky {
+.sky-section-1 {
+  position:absolute;
+  width:100vw;
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0A2342, #071b33);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #020913, #020913); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -olinear-gradient(to top, #0A2342, #0A2342); 
+  height: 100vh;
+}
+
+.sky-section-2 {
   position:absolute;
   width:100vw;
   background: #4B79A1;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #0A2342, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #0A2342, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #0A2342, #020913); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -olinear-gradient(to top, #0A2342, #0A2342); 
+  height: 100vh;
+}
+
+.sky-section-3 {
+  position:absolute;
+  width:100vw;
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #264870, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #355274, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: -olinear-gradient(to top, #0A2342, #0A2342); 
   height: 100vh;
 }

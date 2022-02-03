@@ -1,0 +1,5 @@
+.outer-container {
+    height:50vh;
+    background: linear-gradient(0deg, rgba(84,121,8,1) 15%, rgba(144,140,65,1) 27%, rgba(34,120,195,1) 36%, rgba(45,93,253,1) 65%, rgba(252,252,252,1) 81%);
+    clip-path: circle(80.7% at 50% 250%);
+}   

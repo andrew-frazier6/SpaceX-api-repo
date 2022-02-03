@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Axios from "axios";
 import './App.css';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import Axios from "axios";
+import { Earth } from './components/Earth/Earth'
 import { LaunchContent } from './components/LaunchListContent/LaunchContent';
 import { PieChart } from './components/PieChart/PieChart'
 
@@ -18,19 +19,20 @@ function App() {
   };
 
   useEffect(() => getData(), []);
+  console.log(data)
 
   return (
     <div className="App">
-      <div className='page-1'>
-        <div className='sky'>
+      <div className='section-1'>
+        <div className='sky-section-1'>
           <div className='stars'>
             <Header />
             <LaunchContent data={data} />
           </div>
         </div>
       </div>
-      <div className='page-2'>
-        <div className='sky'>
+      <div className='section-2'>
+        <div className='sky-section-2'>
           <div className='stars'>
             <PieChart
               chartData={data}
@@ -40,13 +42,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='page-3'>
-        <div className='sky'>
+      <div className='section-3'>
+        <div className='sky-section-3'>
           <div className='stars'>
             {/* <RocketContent rocketData={data}/> */}
-
+            <Earth />
             <Footer />
-
           </div>
         </div>
       </div>

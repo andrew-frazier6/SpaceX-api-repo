@@ -15,7 +15,11 @@ export const PieChart = ({ chartData, active, setActive }) => {
             total: chartData?.filter(data => data.success).length,
             color: "#25744c"
         },
-
+        {
+            result: "Planned",
+            total: chartData?.filter(data => !data.success && !data.failure).length,
+            color: "#ff6f00"
+        },
         {
             result: "Failure",
             total: chartData?.filter(data => !data.success).length,
@@ -32,7 +36,9 @@ export const PieChart = ({ chartData, active, setActive }) => {
                         pieValue={((data) => {
                             const failures = data?.result === 'Failure' ? data.total : 0;
                             const success = data?.result === 'Success' ? data.total : 0;
-                            return success + failures;
+                            const planned = data?.result === 'Planned' ? data.total : 0;
+
+                            return success + failures + planned;
                         })}
                         outerRadius={half}
                         innerRadius={({ data }) => {
@@ -71,7 +77,7 @@ export const PieChart = ({ chartData, active, setActive }) => {
                     ) : (
                         <>
                             <Text textAnchor="middle" fill="white" fontSize={40} dy={-20}>
-                                {`${Math.floor(modeledData[0].total / 152 * 100)}%`}
+                                {`${Math.floor(modeledData[0].total / 152 * 100)}% success`}
                             </Text>
 
                             <Text textAnchor="middle" fill="#aaa" fontSize={20} dy={20}>
